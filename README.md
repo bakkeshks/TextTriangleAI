@@ -166,7 +166,7 @@ This command builds the application for production usage. You can then deploy th
   
 
 ### License
-This project is licensed under the [License Name] License - see the LICENSE file for details.
+This project is licensed under the [MIT license] License - see the LICENSE file for details.
 
 
 
