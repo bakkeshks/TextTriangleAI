@@ -3,7 +3,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const generateBlogPost = async (transcriptText) => {
   try {
     const genAI = new GoogleGenerativeAI(
-      (API_KEY = "AIzaSyCVG8mxX9I4Z0EwfdPuAI5b8n_57EFD3PI")
+      (apiKey = process.env.GEMINIAI_API_KEY)
     );
 
     const model = genAI.getGenerativeModel({
