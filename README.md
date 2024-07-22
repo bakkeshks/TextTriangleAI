@@ -3,7 +3,8 @@
 ### Overview
 TextTriangleAI is a project designed to generate technical blog posts from various sources such as YouTube videos, YouTube shorts, local videos, and audio files (with a 30 MB limit). It leverages the Google Gemini AI API for language model tasks and AssemblyAI API for speech-to-text functionality. 
 
-The frontend is built with Next.js, Shadcn/UI, Tailwind CSS, and Highlight.js to render Markdown files into a web interface. On the backend, Node.js, Express, JWT, MongoDB, and AssemblyAI are utilized.
+The frontend is built with Next.js, Shadcn/UI, Tailwind CSS, and Highlight.js to render Markdown files into a web interface. On the backend i had build using Node.js, Express, JWT, MongoDB, and AssemblyAI Api, Google Gemini API, youtube-transcript
+  packages are utilized.
 
 ### Features
 1. **User Authentication and Authorization**
