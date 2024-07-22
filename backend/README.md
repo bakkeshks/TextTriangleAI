@@ -58,7 +58,22 @@ npm start
 ```
 This starts the Node.js server.
 
+### First Run Setup
+When you first run the project, an admin user will be created automatically:
 
+```bash 
+Username: admin@gmail.com
+Password: Admin@1103
+```
+This is initialized by initializeAdmin.js located in the utils folder.
+
+### Accessing Analytics
+To access the /analytics route, you need to log in using the following credentials:
+```bash 
+Username: admin@gmail.com
+Password: Admin@1103
+```
+This route provides insights such as the number of users who generated blog posts, total hours processed, and other user metrics.
 
 
 
