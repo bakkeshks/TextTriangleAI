@@ -29,6 +29,7 @@ export default function AnalyticsDashboard() {
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchAnalyticsData = async () => {
@@ -53,7 +54,6 @@ export default function AnalyticsDashboard() {
   const handleLogout = async () => {
     try {
       localStorage.removeItem("token");
-      const router = useRouter();
       router.push("/");
       console.log("Logged out successfully");
     } catch (err) {

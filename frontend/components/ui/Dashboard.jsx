@@ -176,6 +176,11 @@ const Dashboard = () => {
                 <PaginationContent>
                   <PaginationItem>
                     <PaginationPrevious
+                      href={
+                        currentPage > 1
+                          ? `/dashboard?page=${currentPage - 1}`
+                          : undefined
+                      }
                       onClick={() =>
                         setCurrentPage((prev) => Math.max(prev - 1, 1))
                       }
@@ -185,6 +190,7 @@ const Dashboard = () => {
                   {[...Array(totalPages)].map((_, i) => (
                     <PaginationItem key={i}>
                       <PaginationLink
+                        href={`/dashboard?page=${i + 1}`}
                         onClick={() => setCurrentPage(i + 1)}
                         isActive={currentPage === i + 1}
                       >
@@ -194,6 +200,11 @@ const Dashboard = () => {
                   ))}
                   <PaginationItem>
                     <PaginationNext
+                      href={
+                        currentPage < totalPages
+                          ? `/dashboard?page=${currentPage + 1}`
+                          : undefined
+                      }
                       onClick={() =>
                         setCurrentPage((prev) => Math.min(prev + 1, totalPages))
                       }

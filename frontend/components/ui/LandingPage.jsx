@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 import {
   NavigationMenu,
@@ -54,9 +55,9 @@ const NavBar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <a href="/" className="font-bold text-xl">
+          <Link href="/" className="font-bold text-xl">
             TextTriangleAI
-          </a>
+          </Link>
           <NavigationMenu className="hidden md:block">
             <NavigationMenuList>
               {navItems.map((item) => (
@@ -69,9 +70,9 @@ const NavBar = () => {
             </NavigationMenuList>
           </NavigationMenu>
           <div className="hidden md:flex space-x-4">
-            <Link href="/register">
-              <Button variant="outline">Register</Button>
-            </Link>
+            <Button variant="outline" asChild>
+              <Link href="/register">Register</Link>
+            </Button>
             <Link href="/login">
               <Button>Sign In</Button>
             </Link>
@@ -96,14 +97,14 @@ const NavBar = () => {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100"
                 onClick={toggleMenu}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="pt-4 pb-3 border-t border-gray-200">
@@ -151,9 +152,9 @@ const HeroSection = () => (
             </h1>
             <p className="mt-3 text-xl text-muted-foreground">
               <i>
-                <b>Effortless Conversion: </b> " Transform your YouTube Videos,
-                Shorts, Local Videos, and Audio into Technical Blog Posts in
-                Minutes "
+                <b>Effortless Conversion: </b> &quot;Transform your YouTube
+                Videos, Shorts, Local Videos, and Audio into Technical Blog
+                Posts in Minutes&quot;
               </i>
             </p>
             {/* Buttons */}
@@ -273,10 +274,13 @@ const HeroSection = () => (
           </div>
           {/* Col */}
           <div className="relative ms-4">
-            <img
+            <Image
               className="w-full rounded-md"
               src="/hero.png"
               alt="Image Description"
+              width={800}
+              height={700}
+              priority
             />
           </div>
           {/* End Col */}
@@ -482,7 +486,7 @@ const TestimonialCard = ({ name, role, comment }) => (
       </div>
     </CardHeader>
     <CardContent>
-      <p className="italic">"{comment}"</p>
+      <p className="italic">&ldquo;{comment}&rdquo;</p>
     </CardContent>
   </Card>
 );
