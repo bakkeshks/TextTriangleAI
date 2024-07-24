@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="icon" href="" />
+        <link rel="icon" href="/next-js.svg" />
       </Head>
 
       <body>

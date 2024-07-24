@@ -33,7 +33,7 @@ const PaginationLink = ({
   className,
   isActive,
   size = "icon",
-  href, // Ensure href is being received
+  href,
   ...props
 }) => {
   if (!href) {

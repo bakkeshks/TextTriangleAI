@@ -22,7 +22,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 2;
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
@@ -83,6 +83,7 @@ const Dashboard = () => {
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
   const currentPosts = userData.generatedBlogPosts.slice(startIndex, endIndex);
+
   return (
     <div className="flex h-screen bg-gray-100">
       <div className="flex-1 flex flex-col overflow-hidden">
@@ -91,7 +92,7 @@ const Dashboard = () => {
           <div className="flex items-center space-x-4">
             <span>
               <b>
-                Credits Remaining: {userData.secondsRemaining.toFixed(2)}
+                Credits Remaining: {userData.secondsRemaining.toFixed(2)}{" "}
                 seconds
               </b>
             </span>
@@ -159,7 +160,6 @@ const Dashboard = () => {
                         >
                           View
                         </Button>
-
                         <Button
                           variant="destructive"
                           size="sm"
@@ -172,6 +172,7 @@ const Dashboard = () => {
                   ))}
                 </TableBody>
               </Table>
+
               <Pagination className="mt-4">
                 <PaginationContent>
                   <PaginationItem>
@@ -181,12 +182,17 @@ const Dashboard = () => {
                           ? `/dashboard?page=${currentPage - 1}`
                           : undefined
                       }
-                      onClick={() =>
-                        setCurrentPage((prev) => Math.max(prev - 1, 1))
-                      }
+                      onClick={() => {
+                        if (currentPage > 1) {
+                          setCurrentPage((prev) => Math.max(prev - 1, 1));
+                        }
+                      }}
                       disabled={currentPage === 1}
-                    />
+                    >
+                      Previous
+                    </PaginationPrevious>
                   </PaginationItem>
+
                   {[...Array(totalPages)].map((_, i) => (
                     <PaginationItem key={i}>
                       <PaginationLink
@@ -198,6 +204,7 @@ const Dashboard = () => {
                       </PaginationLink>
                     </PaginationItem>
                   ))}
+
                   <PaginationItem>
                     <PaginationNext
                       href={
@@ -205,11 +212,17 @@ const Dashboard = () => {
                           ? `/dashboard?page=${currentPage + 1}`
                           : undefined
                       }
-                      onClick={() =>
-                        setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-                      }
+                      onClick={() => {
+                        if (currentPage < totalPages) {
+                          setCurrentPage((prev) =>
+                            Math.min(prev + 1, totalPages)
+                          );
+                        }
+                      }}
                       disabled={currentPage === totalPages}
-                    />
+                    >
+                      Next
+                    </PaginationNext>
                   </PaginationItem>
                 </PaginationContent>
               </Pagination>
@@ -220,4 +233,5 @@ const Dashboard = () => {
     </div>
   );
 };
+
 export default Dashboard;
