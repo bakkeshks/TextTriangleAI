@@ -2,6 +2,7 @@
 
 ![Main Image](./images/main.png)
 [Watch a demo on YouTube](https://youtu.be/1SeZuBgcykM)
+[Blog Post: Converting Videos into Technical Blog Posts](https://bakkeshks.hashnode.dev/text-triangle-videos-into-technical-blog)
 
 ### Overview
 
@@ -9,6 +10,9 @@ TextTriangleAI is a project designed to generate technical blog posts from vario
 
 The frontend is built with Next.js, Shadcn/UI, Tailwind CSS, and Highlight.js to render Markdown files into a web interface. On the backend i had build using Node.js, Express, JWT, MongoDB, and AssemblyAI Api, Google Gemini API, youtube-transcript
 packages are utilized.
+
+![Upload Image](./images/upload.png)
+![EditPost Image](./images/editpost.png)
 
 ### Features
 
