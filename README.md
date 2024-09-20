@@ -1,5 +1,8 @@
 # TextTriangleAI
 
+![Main Image](./images/main.png)
+[Watch a demo on YouTube](https://youtu.be/1SeZuBgcykM)
+
 ### Overview
 
 TextTriangleAI is a project designed to generate technical blog posts from various sources such as YouTube videos, YouTube shorts, local videos, and audio files (with a 30 MB limit). It leverages the Google Gemini AI API for language model tasks and AssemblyAI API for speech-to-text functionality.
