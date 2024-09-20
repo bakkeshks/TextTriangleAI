@@ -1,7 +1,9 @@
 # TextTriangleAI
 
 ![Main Image](./images/main.png)
+
 [Watch a demo on YouTube](https://youtu.be/1SeZuBgcykM)
+
 [Blog Post: Converting Videos into Technical Blog Posts](https://bakkeshks.hashnode.dev/text-triangle-videos-into-technical-blog)
 
 ### Overview
